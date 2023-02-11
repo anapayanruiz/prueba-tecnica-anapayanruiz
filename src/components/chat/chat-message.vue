@@ -23,6 +23,6 @@ import { Options, Vue } from 'vue-class-component';
     }
 })
 
-export default class Message extends Vue {
+export default class ChatMessage extends Vue {
 }
 </script>
