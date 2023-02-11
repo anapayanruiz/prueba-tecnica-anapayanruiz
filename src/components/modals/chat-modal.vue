@@ -92,10 +92,13 @@
   </body>
 </template>
 
-<script>
-export default {
-  name: 'ChatModal',
-  props: {
+
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+
+@Options({})
+export default class ChatModal extends Vue {
+  methods: {
   }
 }
 </script>
