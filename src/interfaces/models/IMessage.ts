@@ -1,11 +1,11 @@
 export interface IMessage {
     isFile: boolean;
     numberVersion: string;
-    name: string;
+    nameFile: string;
     typeFile: string;
     sizeFile: string;
     deliveryDate: string;
     url: string;
     text: string;
-    authorName: string;
+    author: number;
 }
