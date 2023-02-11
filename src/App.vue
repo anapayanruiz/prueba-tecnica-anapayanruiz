@@ -1,17 +1,13 @@
 <template>
-  <main>
-    <ChatModal />
-  </main>
+  <ChatModal />
 </template>
 
-<script>
-import ChatModal from '@/components/modals/chat-modal.vue';
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+import ChatModal from './components/modals/chat-modal.vue';
 
-export default {
-  name: 'App',
-  components: {
-    ChatModal
-  }
+@Options({ components: { ChatModal }})
+export default class App extends Vue {
 }
 </script>
 
