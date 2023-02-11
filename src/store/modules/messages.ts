@@ -2,15 +2,10 @@ import { IMessage } from '@/utils/models';
 import api from '@/api-services/api';
 import { Commit } from 'vuex';
 
-// initial state
 const state = {
-  messages: []
+    messages: [] as IMessage[]
 }
 
-// getters
-const getters = {}
-
-// actions
 const actions = {
     getMessages({ commit }: { commit: Commit }): void {
         api.getMessages().then((messages: IMessage[]) => {
@@ -19,9 +14,8 @@ const actions = {
     }
 }
 
-// mutations
 const mutations = {
-    setMessages(state: { messages: IMessage[]; }, messages: IMessage[]) {
+    setMessages(state: { messages: IMessage[]; }, messages: IMessage[]): void {
         state.messages = messages;
     }
 }

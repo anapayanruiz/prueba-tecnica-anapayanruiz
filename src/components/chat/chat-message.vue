@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col justify-start bg-gray-300 p-3 rounded-r-lg rounded-bl-lg">
+    <div class="flex flex-col justify-start bg-gray-300 p-3" :class="className">
         <p class="text-sm">{{ message.text }}.</p>
-        <span class="text-xs text-gray-500">{{ message.deliveryDate }}</span>
+        <span class="text-xs mt-2">{{ message.deliveryDate }}</span>
     </div>
 </template>
 
@@ -15,6 +15,10 @@ import { Options, Vue } from 'vue-class-component';
         message: {
             type: Object as PropType<IMessage>,
             required: true
+        },
+        className: {
+            type: String,
+            require: false
         }
     }
 })

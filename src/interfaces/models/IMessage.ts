@@ -7,5 +7,5 @@ export interface IMessage {
     deliveryDate: string;
     url: string;
     text: string;
-    author: number;
+    typeMessage: number;
 }

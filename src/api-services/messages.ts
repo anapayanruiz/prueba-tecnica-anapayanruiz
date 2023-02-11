@@ -14,7 +14,7 @@ export default {
                         deliveryDate: '28 dic 2018/14:45',
                         url: '',
                         text: '',
-                        author: 2
+                        typeMessage: 2
                     },
                     {
                         isFile: false,
@@ -25,7 +25,7 @@ export default {
                         deliveryDate: '28 dic 2018/14:45',
                         url: '',
                         text: 'Buenas tardes, acabo de subir el primer archivo con el primer caso práctico, espero revisión',
-                        author: 2
+                        typeMessage: 2
                     },
                     {
                         isFile: false,
@@ -36,7 +36,7 @@ export default {
                         deliveryDate: '29 dic 2018/10:11',
                         url: '',
                         text: '¡Gran trabajo Silvia! Pero creo que deberías revisar el punto 3. Intenta añadir un poco más de contexto y un apartado final de conclusiones personales',
-                        author: 1
+                        typeMessage: 1
                     },
                     {
                         isFile: true,
@@ -47,7 +47,7 @@ export default {
                         deliveryDate: '30 dic 2018/8:22',
                         url: '',
                         text: '',
-                        author: 2
+                        typeMessage: 2
                     },
                     {
                         isFile: false,
@@ -58,7 +58,7 @@ export default {
                         deliveryDate: '30 dic 2018/8:22',
                         url: '',
                         text: 'Realizados los cambios según feedback',
-                        author: 2
+                        typeMessage: 2
                     },
                     {
                         isFile: false,
@@ -69,7 +69,7 @@ export default {
                         deliveryDate: '30 dic 2018/15:25',
                         url: '',
                         text: 'Perfecto, excelente trabajo',
-                        author: 1
+                        typeMessage: 1
                     },
                 ]);
             }, 1000)
