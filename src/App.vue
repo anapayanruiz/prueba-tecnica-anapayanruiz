@@ -1,14 +1,16 @@
 <template>
-  <HelloWorld />
+  <main>
+    <ChatModal />
+  </main>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue';
+import ChatModal from '@/components/modals/chat-modal.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ChatModal
   }
 }
 </script>
