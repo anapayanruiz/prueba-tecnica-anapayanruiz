@@ -1,16 +1,10 @@
 import { createStore } from 'vuex';
 import Messages from './modules/messages';
 
-export default createStore({
-  state: {
-  },
+const store = createStore({
   modules: {
     messages: Messages,
   },
-  mutations: {
-  },
-  actions: {
-  },
-  getters: {
-  }
 });
+
+export default store;
