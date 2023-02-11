@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col justify-start bg-gray-300 p-3" :class="className">
-        <p class="text-sm">{{ message.text }}.</p>
+        <p class="text-sm">{{ message.text }}</p>
         <span class="text-xs mt-2">{{ message.deliveryDate }}</span>
     </div>
 </template>

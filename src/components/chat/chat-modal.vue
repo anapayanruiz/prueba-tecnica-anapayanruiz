@@ -12,11 +12,17 @@
           :message="message"
           :class-name="MESSAGES_CLASS[message.typeMessage]"
           class="flex w-full mt-2 max-w-md"
-          :class="{ 'ml-auto justify-end': message.typeMessage === MESSAGES_TYPE.INCOMING }" 
+          :class="{ 'ml-auto justify-end': message.typeMessage === MESSAGES_TYPE.OUTBOUND }" 
         />
       </div>
       <div class="bg-white p-4 border-t border-gray-300">
-        <input class="bg-slate-50 border border-gray-300 flex items-center h-10 w-full rounded-full px-3 text-sm" type="text" placeholder="Type your message…">
+        <input
+          class="bg-slate-50 border border-gray-300 flex items-center h-10 w-full rounded-full px-3 text-sm"
+          type="text" 
+          placeholder="Type your message…"
+          v-model="messageOutgoing"
+          @keyup.enter="sendMessage"
+        >
       </div>
     </div>
   </body>
@@ -41,13 +47,14 @@ import { DateService } from '@/services/DateService';
 
 export default class ChatModal extends Vue {
 
+  private store = useStore();
   private MESSAGES_CLASS = MESSAGES_CLASS;
   private MESSAGES_TYPE = MESSAGES_TYPE;
+  private dateService = new DateService();
+  private messageOutgoing: string;
 
-  private get mappedMessages(): IMessage[] {    
-    const store = useStore();
-    const source = store.state.messages.messages || [];
-    const dateService = new DateService();
+  private get mappedMessages(): IMessage[] { 
+    const source = this.store.state.messages.messages || [];
 
     return source
     .sort((a: IMessage, b: IMessage) => {      
@@ -65,13 +72,16 @@ export default class ChatModal extends Vue {
     })
     .map((e: IMessage) => ({
       ...e,
-      deliveryDate: dateService.formatDate(e.deliveryDate, 1, true)
+      deliveryDate: this.dateService.formatDate(e.deliveryDate, 1, true)
     }));
   }
 
+  private sendMessage(): void {
+    this.store.commit('messages/sendMessage', this.messageOutgoing);
+  }
+
   async created(): Promise<void> {
-    const store = useStore();
-    await store.dispatch('messages/getMessages');
+    await this.store.dispatch('messages/getMessages');
   }
 }
 </script>

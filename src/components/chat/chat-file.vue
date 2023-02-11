@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col justify-start bg-white p-3 w-full border-b border-t border-gray-300">
+    <div class="flex flex-col justify-start bg-white p-3 w-full border-b border-t border-gray-300 cursor-pointer">
         <p class="text-xs font-bold">VERSIÓN {{ message.numberVersion }}</p>
         <p class="text-xs my-1 font-bold text-sky-400">{{ message.nameFile }}</p>
         <p class="leading-none">

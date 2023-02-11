@@ -13,7 +13,7 @@ export default {
                         sizeFile: '',
                         deliveryDate: '2018-12-28T14:45:00Z',
                         url: '',
-                        text: 'Buenas tardes, acabo de subir el primer archivo con el primer caso práctico, espero revisión',
+                        text: 'Buenas tardes, acabo de subir el primer archivo con el primer caso práctico, espero revisión.',
                         typeMessage: 2
                     },
                     {
@@ -46,7 +46,7 @@ export default {
                         sizeFile: '',
                         deliveryDate: '2018-12-29T10:11:00Z',
                         url: '',
-                        text: '¡Gran trabajo Silvia! Pero creo que deberías revisar el punto 3. Intenta añadir un poco más de contexto y un apartado final de conclusiones personales',
+                        text: '¡Gran trabajo Silvia! Pero creo que deberías revisar el punto 3. Intenta añadir un poco más de contexto y un apartado final de conclusiones personales.',
                         typeMessage: 1
                     },
                     {
@@ -57,7 +57,7 @@ export default {
                         sizeFile: '',
                         deliveryDate: '2018-12-30T08:22:00Z',
                         url: '',
-                        text: 'Realizados los cambios según feedback',
+                        text: 'Realizados los cambios según feedback.',
                         typeMessage: 2
                     },
                     {
@@ -68,7 +68,7 @@ export default {
                         sizeFile: '',
                         deliveryDate: '2018-12-30T15:25:00Z',
                         url: '',
-                        text: 'Perfecto, excelente trabajo',
+                        text: 'Perfecto, excelente trabajo.',
                         typeMessage: 1
                     },
                 ]);
