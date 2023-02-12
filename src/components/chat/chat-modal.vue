@@ -1,6 +1,6 @@
 <template>
   <body v-if="mappedMessages.length > 0" class="flex flex-col items-center justify-center w-screen min-h-screen bg-gray-100 text-gray-800 p-4">
-    <div class="flex flex-col flex-grow w-full max-w-xl bg-color-3 shadow-xl rounded-lg overflow-auto">
+    <div id="messages" class="flex flex-col flex-grow w-full max-w-xl bg-color-3 shadow-xl rounded-lg overflow-auto">
       <h3 class="w-full flex items-center justify-center font-bold pt-4">Comentarios</h3>
       <div v-for="message, index in mappedMessages" :key="index" class="flex flex-col flex-grow p-4">
         <ChatFile 
@@ -15,14 +15,19 @@
           :class="{ 'ml-auto justify-end': message.typeMessage === MESSAGES_TYPE.OUTBOUND }" 
         />
       </div>
-      <div class="bg-color-3 p-4 border-t border-gray-300">
+      <div class="flex items-center bg-color-3 p-4 border-t border-gray-300">
         <input
-          class="bg-color-2 border border-gray-300 flex items-center h-10 w-full rounded-full px-3 text-sm"
+          class="bg-color-2 border border-gray-300 flex items-center h-10 w-full rounded-full px-3 text-sm mr-4"
           type="text" 
           placeholder="Type your message…"
           v-model="messageOutgoing"
           @keyup.enter="sendMessage"
         >
+        <button class="bg-color-1 rounded-full p-2 cursor-pointer disabled:opacity-50" @click="sendMessage" :disabled="messageOutgoing === ''">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-color-3">
+            <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+          </svg>
+        </button>
       </div>
     </div>
   </body>
@@ -45,7 +50,7 @@ export default class ChatModal extends Vue {
   private MESSAGES_CLASS = MESSAGES_CLASS;
   private MESSAGES_TYPE = MESSAGES_TYPE;
   private dateService = new DateService();
-  private messageOutgoing: string;
+  private messageOutgoing: string = '';
 
   private get mappedMessages(): IMessage[] { 
     const source = this.store.state.messages.messages || [];
@@ -72,6 +77,14 @@ export default class ChatModal extends Vue {
 
   private sendMessage(): void {
     this.store.commit('messages/sendMessage', this.messageOutgoing);
+    this.messageOutgoing = '';
+
+    setTimeout(() => this.scrollToBottom(), 10);
+  }
+
+  private scrollToBottom(): void {
+    const messages = document.getElementById('messages') as HTMLDivElement;
+    messages.scrollTo(0, messages.scrollHeight);
   }
 
   async created(): Promise<void> {
