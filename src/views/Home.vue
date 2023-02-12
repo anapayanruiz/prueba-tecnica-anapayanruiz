@@ -4,7 +4,7 @@
             :to="{ name: ROUTES.CHAT }" 
             class="bg-blue-500 hover:bg-color-1 text-color-3 font-bold py-2 px-4 rounded"
         >
-            Go to the Chat!
+            Chat
         </router-link>
     </main>
 </template>
