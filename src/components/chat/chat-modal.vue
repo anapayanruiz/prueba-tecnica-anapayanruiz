@@ -72,7 +72,7 @@ export default class ChatModal extends Vue {
     })
     .map((e: IMessage) => ({
       ...e,
-      deliveryDate: this.dateService.formatDate(e.deliveryDate, 1, true)
+      deliveryDate: this.dateService.formatDate(e.deliveryDate, true)
     }));
   }
 
