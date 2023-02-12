@@ -1,5 +1,11 @@
 @import 'tailwind';
 
+:root{
+    --color-1: #0c8cfa;
+    --color-2: #f9f9f8;
+    --color-3: #FFFFFF;
+}
+
 html, body{
     -webkit-overflow-scrolling: touch;
     -webkit-box-sizing: border-box;

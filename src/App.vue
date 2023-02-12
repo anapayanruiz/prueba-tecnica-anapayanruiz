@@ -1,12 +1,11 @@
 <template>
-  <ChatModal />
+  <router-view />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import ChatModal from './components/chat/chat-modal.vue';
 
-@Options({ components: { ChatModal }})
+@Options({})
 export default class App extends Vue {
 }
 </script>

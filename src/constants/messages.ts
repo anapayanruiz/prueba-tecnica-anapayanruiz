@@ -4,6 +4,6 @@ export const MESSAGES_TYPE = {
 }
 
 export const MESSAGES_CLASS = {
-    [MESSAGES_TYPE.INBOUND]: 'bg-slate-50',
-    [MESSAGES_TYPE.OUTBOUND]: 'bg-sky-400 text-white',
+    [MESSAGES_TYPE.INBOUND]: 'bg-color-2',
+    [MESSAGES_TYPE.OUTBOUND]: 'bg-color-1 text-color-3',
 }

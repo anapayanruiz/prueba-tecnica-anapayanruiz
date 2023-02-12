@@ -1,6 +1,6 @@
 <template>
   <body v-if="mappedMessages.length > 0" class="flex flex-col items-center justify-center w-screen min-h-screen bg-gray-100 text-gray-800 p-4">
-    <div class="flex flex-col flex-grow w-full max-w-xl bg-white shadow-xl rounded-lg overflow-auto">
+    <div class="flex flex-col flex-grow w-full max-w-xl bg-color-3 shadow-xl rounded-lg overflow-auto">
       <h3 class="w-full flex items-center justify-center font-bold pt-4">Comentarios</h3>
       <div v-for="message, index in mappedMessages" :key="index" class="flex flex-col flex-grow p-4">
         <ChatFile 
@@ -15,9 +15,9 @@
           :class="{ 'ml-auto justify-end': message.typeMessage === MESSAGES_TYPE.OUTBOUND }" 
         />
       </div>
-      <div class="bg-white p-4 border-t border-gray-300">
+      <div class="bg-color-3 p-4 border-t border-gray-300">
         <input
-          class="bg-slate-50 border border-gray-300 flex items-center h-10 w-full rounded-full px-3 text-sm"
+          class="bg-color-2 border border-gray-300 flex items-center h-10 w-full rounded-full px-3 text-sm"
           type="text" 
           placeholder="Type your message…"
           v-model="messageOutgoing"
@@ -38,13 +38,7 @@ import ChatMessage from '@/components/chat/chat-message.vue';
 import ChatFile from '@/components/chat/chat-file.vue';
 import { DateService } from '@/services/DateService';
 
-@Options({ 
-  components: { 
-    ChatMessage,
-    ChatFile
-  }
-})
-
+@Options({ components: { ChatMessage, ChatFile } })
 export default class ChatModal extends Vue {
 
   private store = useStore();
