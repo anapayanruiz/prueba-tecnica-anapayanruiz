@@ -1,11 +1,7 @@
-export interface IMessage {
-    isFile: boolean;
-    numberVersion: string;
-    nameFile: string;
-    typeFile: string;
-    sizeFile: string;
+import { IFile } from "./IFile";
+
+export interface IMessage extends IFile {
     deliveryDate: string;
-    url: string;
     text: string;
     typeMessage: number;
 }

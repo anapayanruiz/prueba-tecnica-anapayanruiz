@@ -46,9 +46,10 @@ import { DateService } from '@/services/DateService';
 @Options({ components: { ChatMessage, ChatFile } })
 export default class ChatModal extends Vue {
 
-  private store = useStore();
   private MESSAGES_CLASS = MESSAGES_CLASS;
   private MESSAGES_TYPE = MESSAGES_TYPE;
+
+  private store = useStore();
   private dateService = new DateService();
   private messageOutgoing: string = '';
 
@@ -75,11 +76,11 @@ export default class ChatModal extends Vue {
     }));
   }
 
-  private sendMessage(): void {
-    this.store.commit('messages/sendMessage', this.messageOutgoing);
+  private async sendMessage(): Promise<void> {
+    await this.store.dispatch('messages/sendMessage', this.messageOutgoing);
     this.messageOutgoing = '';
 
-    setTimeout(() => this.scrollToBottom(), 10);
+    this.scrollToBottom();
   }
 
   private scrollToBottom(): void {
