@@ -1,4 +1,4 @@
-# prueba-tecnica-iseazy-ana-payan-ruiz
+# prueba-tecnica-ana-payan-ruiz
 
 ## Project setup
 ```
